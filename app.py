@@ -23,11 +23,8 @@ def get_all_articles(category):
     return jsonify(filtered_list)
 
 
-@app.route("/api/news/<string:category>/<path:article>")
-def read_article(category, article):
-    print('article is')
-    print(article)
-    print('-------------')
+@app.route("/api/news/<path:article>")
+def read_article(article):
     return jsonify(ansa.read_article(article))
 
 
